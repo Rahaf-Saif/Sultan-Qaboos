@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>السلطان قابوس بن سعيد</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>السلطان قابوس بن سعيد آل سعيد</h1>
+      <p>رنا و تسنسم </p>
+    </div>
+  </header>
+
+  <section class="bio">
+    <div class="container">
+      <h2>السيرة الذاتية</h2>
+      <p>السلطان قابوس بن سعيد آل سعيد (1940-2020) كان سلطان عمان من عام 1970 حتى وفاته في عام 2020. كان أطول القادة حكماً في العالم العربي، معروفاً بتحديث سلطنة عمان وبسياساته التي تهدف إلى الحياد والسلام في الشؤون الإقليمية والدولية.</p>
+      <p>لقد كان له دور كبير في تحويل عمان من دولة منعزلة إلى دولة حديثة ومتقدمة. قام السلطان قابوس بتنفيذ إصلاحات كبيرة في مجالات التعليم والصحة والبنية التحتية، بالإضافة إلى مبادرات لتعزيز الثقافة والتراث العماني.</p>
+    </div>
+  </section>
+
+  <section class="legacy">
+    <div class="container">
+      <h2>الإرث</h2>
+      <p>إرث السلطان قابوس لا يزال يؤثر في شكل عمان حتى اليوم. تحت قيادته، حققت عمان تقدماً ملحوظاً في مجالات التعليم والصحة والبنية التحتية. كما أنه نال تقديراً دولياً لالتزامه بالسلام والدبلوماسية، وكانت جهوده في تعزيز الوحدة الوطنية تحظى باحترام العمانيين والعالم بأسره.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="container">
+      <h2>معرض الصور</h2>
+      <div class="images">
+        <img src="https://via.placeholder.com/300x200" alt="السلطان قابوس">
+        <img src="https://via.placeholder.com/300x200" alt="السلطان قابوس مع قادة العالم">
+        <img src="https://via.placeholder.com/300x200" alt="تحديث عمان">
+      </div>
+    </div>
+  </section>
+
+  <section class="comments">
+    <div class="container">
+      <h2>تعليقات الزوار</h2>
+      <form id="commentForm">
+        <textarea id="commentInput" placeholder="اكتب تعليقك هنا..." rows="4" required></textarea>
+        <button type="submit">إرسال التعليق</button>
+      </form>
+      <div id="commentSection">
+        <!-- User comments will appear here -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 تكريم السلطان قابوس. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript to handle comment submission
+    document.getElementById("commentForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from reloading the page
+      const commentInput = document.getElementById("commentInput");
+      const commentText = commentInput.value.trim();
+      if (commentText !== "") {
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.innerText = commentText;
+        // Append the comment to the comment section
+        document.getElementById("commentSection").appendChild(commentDiv);
+        commentInput.value = ""; // Clear the input field
+      }
+    });
+  </script>
+
+</body>
+
+</html>

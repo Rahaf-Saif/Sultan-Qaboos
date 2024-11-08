@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>السلطان قابوس بن سعيد</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>السلطان قابوس بن سعيد آل سعيد</h1>
+      <p>رنا و تسنسم </p>
+    </div>
+  </header>
+
+  <section class="bio">
+    <div class="container">
+      <h2>السيرة الذاتية</h2>
+      <p>السلطان قابوس بن سعيد آل سعيد (1940-2020) كان سلطان عمان من عام 1970 حتى وفاته في عام 2020. كان أطول القادة حكماً في العالم العربي، معروفاً بتحديث سلطنة عمان وبسياساته التي تهدف إلى الحياد والسلام في الشؤون الإقليمية والدولية.</p>
+      <p>لقد كان له دور كبير في تحويل عمان من دولة منعزلة إلى دولة حديثة ومتقدمة. قام السلطان قابوس بتنفيذ إصلاحات كبيرة في مجالات التعليم والصحة والبنية التحتية، بالإضافة إلى مبادرات لتعزيز الثقافة والتراث العماني.</p>
+    </div>
+  </section>
+
+  <section class="legacy">
+    <div class="container">
+      <h2>الإرث</h2>
+      <p>إرث السلطان قابوس لا يزال يؤثر في شكل عمان حتى اليوم. تحت قيادته، حققت عمان تقدماً ملحوظاً في مجالات التعليم والصحة والبنية التحتية. كما أنه نال تقديراً دولياً لالتزامه بالسلام والدبلوماسية، وكانت جهوده في تعزيز الوحدة الوطنية تحظى باحترام العمانيين والعالم بأسره.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="container">
+      <h2>معرض الصور</h2>
+      <div class="images">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/QaboosBinSaidAlSaid.jpg/800px-QaboosBinSaidAlSaid.jpg" alt="السلطان قابوس">
+        <img src="https://images.skynewsarabia.com/images/v1/2020/01/11/1311676/1100/1955/1-1311676.jpg" alt="السلطان قابوس مع قادة العالم">
+        <img src="https://cloudfront-eu-central-1.images.arcpublishing.com/atheer/BM2A5YA4LVFMPFDVPISFOEOU5Y.jpeg" alt="تحديث عمان">
+      </div>
+    </div>
+  </section>
+<section class="video">
+        <div class="container">
+            <h2>شاهد الفيديو</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_AOCfMPm5AQ?si=99wsHPAZyP2JCRtx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+  <section class="comments">
+    <div class="container">
+      <h2>تعليقات الزوار</h2>
+      <form id="commentForm">
+        <textarea id="commentInput" placeholder="اكتب تعليقك هنا..." rows="4" required></textarea>
+        <button type="submit">إرسال التعليق</button>
+      </form>
+      <div id="commentSection">
+        <!-- User comments will appear here -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 تكريم السلطان قابوس. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+        // JavaScript to handle comment submission
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the form from reloading the page
+            
+            const commentInput = document.getElementById("commentInput");
+            const commentText = commentInput.value.trim();
+
+            if (commentText !== "") {
+                // Retrieve existing comments from local storage
+                let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+                // Add the new comment
+                comments.push(commentText);
+
+                // Save the updated comments back to local storage
+                localStorage.setItem("comments", JSON.stringify(comments));
+
+                // Clear the input field
+                commentInput.value = "";
+
+                // Update the comment section
+                displayComments();
+            }
+        });
+
+        // Function to display all comments
+        function displayComments() {
+            const commentSection = document.getElementById("commentSection");
+            commentSection.innerHTML = "";  // Clear previous comments
+
+            // Retrieve comments from local storage
+            let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+            // Loop through the comments and display them
+            comments.forEach(function(comment) {
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerText = comment;
+
+                // Append the comment to the comment section
+                commentSection.appendChild(commentDiv);
+            });
+        }
+
+        // Display comments when the page loads
+        window.onload = function() {
+            displayComments();
+        };
+    </script>
+
+</body>
+
+</html>
